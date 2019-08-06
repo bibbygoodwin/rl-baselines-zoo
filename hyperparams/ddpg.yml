@@ -1,0 +1,74 @@
+MountainCarContinuous-v0:
+  n_timesteps: 300000
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.5
+  memory_limit: 5000
+
+LunarLanderContinuous-v2:
+  n_timesteps: !!float 6e5
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+Pendulum-v0:
+  n_timesteps: !!float 2e5
+  policy: 'MlpPolicy'
+  noise_type: 'ornstein-uhlenbeck'
+  noise_std: 0.1
+  memory_limit: 50000
+
+# To be tuned
+BipedalWalker-v2:
+  n_timesteps: !!float 5e6
+  policy: 'LnMlpPolicy'
+  normalize_observations: True
+  noise_type: 'adaptive-param'
+  noise_std: 0.2
+  memory_limit: 50000
+
+# To be tuned
+HalfCheetahBulletEnv-v0:
+  n_timesteps: !!float 1e6
+  policy: 'LnMlpPolicy'
+  gamma: 0.99
+  memory_limit: 100000
+  noise_type: 'normal'
+  noise_std: 0.024
+  batch_size: 64
+  normalize_observations: True
+  normalize_returns: True
+
+Walker2DBulletEnv-v0:
+  n_timesteps: !!float 2e6
+  policy: 'LnMlpPolicy'
+  gamma: 0.99
+  memory_limit: 100000
+  noise_type: 'normal'
+  noise_std: 0.024
+  batch_size: 64
+  normalize_observations: True
+  normalize_returns: True
+
+AntBulletEnv-v0:
+  n_timesteps: !!float 2e6
+  policy: 'LnMlpPolicy'
+  gamma: 0.99
+  memory_limit: 100000
+  noise_type: 'normal'
+  noise_std: 0.024
+  batch_size: 64
+  normalize_observations: True
+  normalize_returns: True
+
+HopperBulletEnv-v0:
+  n_timesteps: !!float 2e6
+  policy: 'LnMlpPolicy'
+  gamma: 0.99
+  memory_limit: 100000
+  noise_type: 'normal'
+  noise_std: 0.024
+  batch_size: 64
+  normalize_observations: True
+  normalize_returns: True
