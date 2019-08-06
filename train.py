@@ -28,6 +28,7 @@ from stable_baselines.ppo2.ppo2 import constfn
 from utils import make_env, ALGOS, linear_schedule, get_latest_run_id, get_wrapper_class
 from utils.hyperparams_opt import hyperparam_optimization
 
+import pybulletgym
 
 my_bullet_envs = ['HopperBulletPhase-v0',           # <-- the original, more test, based in pybullet internal Hopper
                   'Walker2DPyBulletPhaseEnv-v0',    # <-- these next 15 are based on Roboschool (pybulletgym_envs below)
@@ -157,7 +158,7 @@ if __name__ == '__main__':
                 hyperparams = hyperparams_dict[env_id]
             elif is_atari:
                 hyperparams = hyperparams_dict['atari']
-            elif env_id == "HopperBulletPhase-v2":
+            elif env_id in pfnn_list:
                 hyperparams = hyperparams_dict["HopperBulletEnv-v0"]
                 hyperparams['policy'] = "SCN_PF_NOnly"
                 # hyperparams['policy_kwargs'] = dict(net_arch=[64,64])
